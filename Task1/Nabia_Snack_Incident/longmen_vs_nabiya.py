@@ -122,8 +122,7 @@ def main_battle_loop():
             print("\n长门获得了胜利！成功守护了港区的军粮！")
             break
 
-        time.sleep(0.1)
-
+        time.sleep(0.5)
         # 5. --- 娜比娅的回合 ---
         print("\n>>> 娜比娅的回合")
         enemy_action = nabiya_ai_action(nabiya_hp)
@@ -149,4 +148,4 @@ def main_battle_loop():
             break
 
         turn += 1
-        time.sleep(0.1)
+        time.sleep(0.5)
