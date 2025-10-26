@@ -89,13 +89,13 @@ def main_battle_loop():
         action = choose_nagato_action(nagato_hp, nabiya_hp)
 
         if action == 'attack':
-            print("长门：「感受BIG SEVEN的威力吧！」")
+            print("长门发动攻击")
             base_damage = calculate_attack_damage(NAGATO_ATTACK_DICE)
             if check_critical_hit(base_damage):
                 print("💥「BIG SEVEN」触发！伤害翻倍！")
                 base_damage *= 2 
             final_damage = max(base_damage - nabiya_defense_bonus, 0)
-            print(f"长门的主炮对娜比娅造成了 {final_damage} 点伤害！")
+            print(f"长门对娜比娅造成了 {final_damage} 点伤害！")
             nabiya_hp -= final_damage
             nabiya_defense_bonus = 0
 
@@ -128,10 +128,10 @@ def main_battle_loop():
         enemy_action = nabiya_ai_action(nabiya_hp)
 
         if enemy_action == 'attack':
-            print("娜比娅：「嘿咻~尝尝这个！」")
+            print("娜比娅发动攻击")
             enemy_damage = calculate_attack_damage(NABIYA_ATTACK_DICE)
             final_damage = max(enemy_damage - nagato_defense_bonus, 0)
-            print(f"娜比娅的攻击对长门造成了 {final_damage} 点伤害！")
+            print(f"娜比娅对长门造成了 {final_damage} 点伤害！")
             nagato_hp -= final_damage
             nagato_defense_bonus = 0
         
